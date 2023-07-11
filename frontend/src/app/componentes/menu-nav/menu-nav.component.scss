@@ -1,0 +1,17 @@
+nav {
+    //float: left;
+    text-align: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 75px;
+    padding: 12px 0;
+    display: inline-block;
+    //float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+}

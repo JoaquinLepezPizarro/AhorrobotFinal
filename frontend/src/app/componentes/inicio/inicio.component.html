@@ -1,0 +1,103 @@
+<link rel="styleheet" type="text/css" href="app.component.scss"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="cuerpoPagina">
+  <!--0, 1-->
+  <a href="http://localhost:4200/">
+    <img *ngIf="flag != 2" class="imagenPortada" src="../assets/ahorrobot.png">
+  </a>
+  
+  <!--2-->
+  <!-- <div class="noSeEncontraronResultados" *ngIf="flag == 2">
+    <h3>No se han encontrado resultados :(</h3>
+    <h4>Intente una nueva busqueda</h4>
+  </div>   -->
+
+  <!--0, 1, 2-->
+  <form [formGroup]="buscador" (ngSubmit)="mostrarProductoMasBarato()">
+    <div class="barraDeBusqueda" for="productoBuscado">
+      <input class="barra" type="text" formControlName="producto" placeholder="Buscar producto">
+      <button class="botonBuscar">
+        <span class="fa fa-search"></span>
+      </button> 
+    </div>
+
+    <div id="QueEsAhorrobot" *ngIf="flag != 1">
+      <h1>¿Qué es Ahorrobot?</h1>
+      <h2>Ahorrobot es un bot automatizado que te permitirá encontrar los mejores precios para tus productos de farmacia.</h2><br><br>
+      <h3>Con Ahorrobot podrás:</h3>
+      <h4>Ahorrar tiempo: 😰No hagas lentas y tediosas búsquedas farmacia por farmacia😰😍¡Ahorrobot las examina por ti!😍</h4>
+      <h4>Ahorrar dinero: 😔A veces un producto es más caro en una farmacia que en otra😔🤑¡Ahorrobot encuentra los mejores precios por ti!🤑</h4>
+      <h4>Conseguir más productos: 🤯Podrás comprar más productos por el mismo precio🤯🥳¡No gastes de más y lleva más!🥳</h4>
+    </div>
+
+  <!--1-->
+  <div id="cajaBusqueda" (change)="filtrarFarmacias()" *ngIf="flag == 1">
+    <div  id="barraFiltroBusqueda" *ngFor="let opcion of opcionesFarmacias">
+      <input id="opcionesBarraFiltroBusqueda" type="checkbox" 
+              [checked]="opcion.checked"
+              (change)="guardarIdFarmacias($event, opcion.value)"
+              style="background-color: #bbff00;">
+      <label>{{ opcion.name }}</label>
+      <br>
+    </div>
+
+  <!--1-->
+      <table class="tabla" *ngIf="flag == 1 && mostrarTabla.length > 0">
+
+        <!--COLUMNAS-->
+        <tr>
+          <th>PRODUCTO</th>
+          <th>DESCRIPCION</th>
+          <th>PRECIO</th>
+          <th>FARMACIA</th>
+          <th>LINK PRODUCTO</th>
+        </tr>
+
+        <!--FILAS-->
+        <tr *ngFor="let listaProductos of productos">
+
+          <!--IMAGEN PRODUCTO-->
+          <td id="columnaFoto" *ngIf="mostrarTabla.includes(listaProductos.idFarmacia)">
+            <img class="imagenesProductos" src="{{listaProductos.linkFoto}}" alt="TEXTO DE IMAGENN">
+          </td>
+
+          <!--DESCRIPCION-->
+          <td *ngIf="mostrarTabla.includes(listaProductos.idFarmacia)">{{listaProductos.descripcion}}</td>
+
+          <!--PRECIO-->
+          <td *ngIf="mostrarTabla.includes(listaProductos.idFarmacia)" id="precio">{{listaProductos.precio}}</td>
+          
+          <!--LOGO FARMACIA-->
+          <td *ngIf="mostrarTabla.includes(listaProductos.idFarmacia)">
+            <div *ngIf="listaProductos.idFarmacia == 1">
+              <img src="{{farmacias[0].linkLogo}}" alt="SIMI">
+            </div>
+            <div *ngIf="listaProductos.idFarmacia == 2">
+              <img src="{{farmacias[1].linkLogo}}" alt="ECO">
+            </div>
+            <div *ngIf="listaProductos.idFarmacia == 3">
+              <img src="{{farmacias[2].linkLogo}}" alt="REDFARMA">
+            </div>
+            <div *ngIf="listaProductos.idFarmacia == 4">
+              <img src="{{farmacias[3].linkLogo}}" alt="SALCO">
+            </div>
+            <div *ngIf="listaProductos.idFarmacia == 5">
+              <img src="{{farmacias[4].linkLogo}}" alt="AHUMADA">
+            </div>
+          </td>
+
+          <!--BOTON COMPRAR-->
+          <td *ngIf="mostrarTabla.includes(listaProductos.idFarmacia)">
+            <button id="botonComprar">
+              <a id="link" href="{{listaProductos.linkProducto}}" target="_blank">Comprar</a>
+            </button> 
+          </td>          
+        </tr>
+      </table>
+    </div>
+  </form>
+
+  <!--2-->
+  <!-- <img class="ahorrobotDefectuoso" *ngIf="flag==2" img src="../assets/defectuoso.png"> -->
+</div>

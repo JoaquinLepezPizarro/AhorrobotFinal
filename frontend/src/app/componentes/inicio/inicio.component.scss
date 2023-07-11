@@ -1,0 +1,189 @@
+.imagenPortada {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+// #titulo {
+//     text-align: center;
+//     color: red;
+// }
+
+//CENTRAR LA BARRA Y BOTON DE BUSQUEDA
+.barraDeBusqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //margin-bottom: 50px;
+    padding-bottom: 25px;
+}
+
+//BARRA DE NAVEGACION
+.barra {
+    box-shadow: 0 2px 5px 1px rgba(213, 207, 218, 0.849);
+    padding: 10px;
+    border: none;
+    font-size: 1em;
+    align-items: center;
+    background-color: #f3ead9;
+}
+
+//BOTON BUSCAR
+.botonBuscar {
+    box-shadow: 0 2px 5px 1px rgb(230, 229, 229);
+    padding: 11px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ffaf65;
+    color: black;
+    //margin-left: 0%; //40
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.botonBuscar:hover {
+    background-color: #ff6565;
+    color: black;
+}
+
+//BARRA DE NAVEGACION
+// #barra {
+//     box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+//     border-radius: 50px;
+//     margin-left: 30%;
+//     width: 50%;
+//     //display: block;
+// }
+
+//BOTON BUSCAR
+// #botonBuscar {
+//     cursor: pointer;
+//     border: 0;
+//     box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+//     border-radius: 50px;
+//     //display: inline;
+// }
+
+//TABLA
+.tabla {
+    margin-top: 20px;
+    margin-left: 4%;
+    width: 92%;
+    border-collapse: collapse;
+    border: #E6EE9C 5px solid;
+    background-color: #CDDC39;
+    //border: 2px #A6ACAF;
+}
+
+//TITULOS DE TABLA (th) y TEXTO INF TABLA (td)
+th, td {
+    margin: 5px;
+    text-align: center;
+    border: #E6EE9C 5px solid;
+    font: 170% sans-serif
+    //background-color: #cbeeff;
+}
+
+td {
+    font-size:large;
+    font: 150% sans-serif
+}
+
+//TITULOS DE TABLA
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #8BC34A;
+    border: #E6EE9C 5px solid;
+    font-size:larger;
+    font-weight: bold;
+    font: bold;
+}
+
+#precio {
+    font-weight: bold;
+}
+
+//IMAGENES DE LOS PRODUCTOS
+.imagenesProductos {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#botonComprar:hover {
+    background-color: rgba(247, 201, 51, 0.808);
+    color: black;
+}
+
+#botonComprar {
+    background-color: rgba(148, 146, 36, 0.925);
+    border-radius: 8px;
+    font-family: inherit;
+    //box-shadow: black, red;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-color: #e7e7e7;;
+    font-size: medium;
+}
+
+#link {
+    text-decoration: none;
+    color: black;
+}
+
+#columnaFoto {
+    background-color: white;
+}
+
+.cuerpoPagina {
+    background-color: #FFECB3;
+    height: 100%;
+    padding: 3%;
+}
+
+.noSeEncontraronResultados {
+    font: 170% sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.ahorrobotDefectuoso {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#barraFiltroBusqueda {
+    //width: 100%;
+    background-color: #e64919b4;
+    display: inline-block;
+    border: 3px solid #8B4513;
+    border-radius: 8px;
+    padding: 10px;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10%;
+    //padding-inline: 2%;
+}
+
+#cajaBusqueda { 
+    background-color: #FFB74D;
+}
+
+#opcionesBarraFiltroBusqueda {
+    justify-content: center;
+    align-items: center;
+}
+
+#QueEsAhorrobot {
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

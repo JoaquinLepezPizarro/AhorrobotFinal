@@ -1,0 +1,38 @@
+.cuerpoPagina {
+    background-color: #FFECB3;
+    height: 100%;
+    padding: 3%;
+}
+
+.logoBotco{
+    display: block;
+    margin: 0 auto;
+    width: 340px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.fotoPersona{
+    height: 300px;
+}
+
+#quienesSomos{
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#fotos{
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#relleno{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#imagenDerecha{
+    margin-left: -20%;
+}
